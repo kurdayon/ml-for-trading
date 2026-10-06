@@ -17,6 +17,11 @@ statistics to reuse optimal solutions for smaller regions. Fitting takes
 `O(n log n + k * m²)` time for `n` points, `m` distinct inputs, and
 `k = n_splits + 1` regions, avoiding the combinatorial cost of brute force.
 
+For background, see Guillem Rigaill's [A pruned dynamic programming algorithm
+to recover the best segmentations with 1 to Kmax change-points](https://arxiv.org/pdf/1004.0887).
+The paper describes dynamic programming for optimal segmentation and a pruning
+extension; this implementation uses the unpruned algorithm.
+
 Run tests from the repository root (NumPy required):
 
 ```sh
