@@ -10,8 +10,16 @@ This folder keeps old implementations for reference.
   because it used a very inefficient brute-force search over all combinations of
   split boundaries. This becomes impractical as the number of points and splits
   grows.
+- [`pwm.py`](pwm.py) contains an unfinished attempt to fit a piecewise-monotonic
+  function with a limit on the number of turning points (peaks and valleys).
+  It was moved here because the implementation was never completed.
+- [`test_opos.py`](test_opos.py) is an empirical check of the known position-sizing
+  formula `p = mean / (mean² + variance)`, using numerical optimization. It also
+  compares monotonic positions based on that formula against random search.
+  It is retained here as an exploratory experiment rather than a proof.
 
-We now have a much more efficient implementation using dynamic programming:
+For the old brute-force step model, we now have a much more efficient
+implementation using dynamic programming:
 [`PiecewiseConstantRegressor` in `src/tradinglab/models/piecewise_constant.py`](../../../src/tradinglab/models/piecewise_constant.py).
 See the [models README](../../../src/tradinglab/models/README.md) for its interface
 and test instructions.
